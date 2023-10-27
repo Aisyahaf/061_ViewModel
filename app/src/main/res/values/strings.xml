@@ -2,6 +2,7 @@
     <string name="app_name">Project4_DataSource</string>
     <string name="laki">Laki-Laki</string>
     <string name="wanita">Perempuan</string>
-    <string name="submit">Submit</string>
-    <string name="girl">Wanita</string>
+    <string name="submit">Register</string>
+    <string name="statusBM">Belum Menikah</string>
+    <string name="statusM">Menikah</string>
 </resources>
