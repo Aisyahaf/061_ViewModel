@@ -92,7 +92,7 @@ fun Navbar() {
     Row (verticalAlignment = Alignment.CenterVertically){
         Image(painter = painterResource(id = R.drawable.baseline_arrow_back_24),
             contentDescription = "back" )
-        Spacer(modifier = Modifier.padding(3.dp))
+        Spacer(modifier = Modifier.padding(20.dp))
         Text(
             text = "Register",
             fontSize = 15.sp,
@@ -110,7 +110,7 @@ fun SelectJK(
 ){
     var selectedValue by rememberSaveable { mutableStateOf("") }
 
-    Column (
+    Row (
         modifier = Modifier.fillMaxWidth()
     ){
         options.forEach { item ->
@@ -144,7 +144,7 @@ fun SelectST(
 ){
     var selectedValue by rememberSaveable { mutableStateOf("") }
 
-    Column (
+    Row (
 //        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxWidth(),
     ){
@@ -242,7 +242,7 @@ fun TampilForm(cobaViewModel: CobaViewModel = viewModel()){
 
     Button(
         modifier = Modifier.fillMaxWidth(),
-        onClick = { cobaViewModel.insertData(textUsn, textTlp, textEmail, textAlamat, dataForm.sex, dataForm.status) })
+        onClick = { cobaViewModel.insertData(textUsn, textTlp, textAlamat, textEmail,  dataForm.sex, dataForm.status) })
     {
         Text(
             text = stringResource(R.string.submit),
@@ -250,18 +250,18 @@ fun TampilForm(cobaViewModel: CobaViewModel = viewModel()){
         )
     }
 
-    Spacer(modifier = Modifier.height(100.dp))
     TextHasil(
         emailnya = cobaViewModel.email,
-        alamatnya = cobaViewModel.alamat,
         jenisnya = cobaViewModel.jenisKl,
         statusnya = cobaViewModel.staTus,
+        alamatnya = cobaViewModel.alamat,
+
     )
 
 }
 
 @Composable
-fun TextHasil(emailnya: String, alamatnya: String, jenisnya: String, statusnya: String){
+fun TextHasil(jenisnya: String, statusnya: String,  alamatnya: String, emailnya: String  ){
     ElevatedCard (
         elevation = CardDefaults.cardElevation(
             defaultElevation = 6.dp
